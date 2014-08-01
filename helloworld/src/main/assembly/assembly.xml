@@ -1,0 +1,36 @@
+<assembly>
+  <id>bin</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <dependencySets>
+    <dependencySet>
+      <useProjectArtifact>true</useProjectArtifact>
+      <outputDirectory>lib</outputDirectory> 
+    </dependencySet>
+    <dependencySet>
+      <unpack>false</unpack>  
+      <scope>runtime</scope> 
+    </dependencySet>
+  </dependencySets> 
+  <fileSets>
+    <fileSet>
+      <outputDirectory>/</outputDirectory>
+      <includes>
+        <include>README.txt</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>src/main/scripts</directory>
+      <outputDirectory>/bin</outputDirectory>
+      <includes>
+        <include>run.sh</include>
+        <include>run.bat</include>
+      </includes>
+    </fileSet>
+
+    <fileSet>  
+      <directory>${project.build.outputDirectory}</directory>  
+    </fileSet>  
+  </fileSets>
+</assembly>
